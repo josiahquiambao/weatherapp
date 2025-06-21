@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<div class="landing-wrapper vh-100">
+  <!-- Background Blur Overlay -->
+  <div class="rain-bg"></div>
+
+  <!-- Login Card -->
+  <div class="glass-card text-center p-6 p-md-8">
+    <i class="fas fa-cloud-showers-heavy text-4xl text-5xl-md mb-4 weather-icon"></i>
+    <h1 class="text-3xl text-4xl-md font-bold mb-4">Mata Weather</h1>
+    <p class="text-base text-lg-md mb-6">Accurate weather forecasts for your location</p>
+    
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error-message mb-4 p-3 rounded bg-red-100 text-red-800">
+      {{ errorMessage }}
+    </div>
+    
+    <button (click)="login()" class="login-btn py-3 px-6 w-full max-w-xs">
+      Login
+    </button>
+  </div>
+</div>

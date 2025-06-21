@@ -1,0 +1,126 @@
+.weather-page {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(4px);
+  min-height: 100vh;
+  background-color: #0a0f1a;
+  color: #fff;
+  
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.weather-metric {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--weather-border);
+  
+  &:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  i {
+    color: var(--weather-accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.hour-card {
+  transition: all 0.3s ease;
+  min-width: 80px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--weather-border);
+  border-radius: 12px;
+
+  &:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.hourly-forecast {
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--weather-accent);
+    border-radius: 10px;
+  }
+}
+
+/* Background variants */
+.rainy-bg {
+  background-image: url('/assets/rain-bg.png');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/rain-bg-mobile.png'), 
+                      url('/assets/rain-bg.png');
+  }
+}
+
+.sunny-bg {
+  background-image: url('/assets/sunny.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/sunny-mobile.jpg'),
+                      url('/assets/sunny.jpg');
+  }
+}
+
+.foggy-bg {
+  background-image: url('/assets/foggy.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/foggy-mobile.jpg'),
+                      url('/assets/foggy.jpg');
+  }
+}
+
+.snowy-bg {
+  background-image: url('/assets/snowy.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/snowy-mobile.jpg'),
+                      url('/assets/snowy.jpg');
+  }
+}
+
+.cloudy-bg {
+  background-image: url('/assets/cloudy.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/cloudy-mobile.jpg'),
+                      url('/assets/cloudy.jpg');
+  }
+}
+
+.default-bg {
+  background: linear-gradient(to bottom right, #1b2735, #090a0f);
+}

@@ -1,0 +1,141 @@
+/* Home Page Specific Styles */
+.search-bar {
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  
+  &:focus-within {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  input {
+    &::placeholder {
+      color: var(--weather-text);
+      opacity: 0.7;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+.weather-icon {
+  font-size: 4rem;
+  color: var(--weather-accent);
+}
+.day-card {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--weather-border);
+  
+  &:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Weather Metric Cards */
+.weather-metric {
+  i {
+    color: var(--weather-accent);
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .day-card {
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* Avatar Styles */
+.rounded-circle {
+  border: 2px solid var(--weather-accent);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.weather-page {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(4px);
+  background-color: #0a0f1a;
+  
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+// Background variants
+.rainy-bg {
+  background-image: url('/assets/rain-bg.png');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/rain-bg-mobile.png'),
+                      url('/assets/rain-bg.png');
+  }
+}
+
+.sunny-bg {
+  background-image: url('/assets/sunny.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/sunny-mobile.jpg'),
+                      url('/assets/sunny.jpg');
+  }
+}
+
+.foggy-bg {
+  background-image: url('/assets/foggy.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/foggy-mobile.jpg'),
+                      url('/assets/foggy.jpg');
+  }
+}
+
+.snowy-bg {
+  background-image: url('/assets/snowy.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/snowy-mobile.jpg'),
+                      url('/assets/snowy.jpg');
+  }
+}
+
+.cloudy-bg {
+  background-image: url('/assets/cloudy.jpg');
+  
+  @media (max-width: 768px) {
+    background-image: url('/assets/cloudy-mobile.jpg'),
+                      url('/assets/cloudy.jpg');
+  }
+}
+
+.default-bg {
+  background: linear-gradient(to bottom right, #1b2735, #090a0f);
+}

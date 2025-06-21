@@ -1,0 +1,210 @@
+/* Global Styles */
+:root {
+  --weather-primary: #3B82F6;
+  --weather-secondary: #1E40AF;
+  --weather-accent: #60A5FA;
+  --weather-glass: rgba(15, 23, 42, 0.3);
+  --weather-text: rgba(255,255,255,0.9);
+  --weather-border: rgba(255,255,255,0.15);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  min-height: 100vh;
+  color: var(--weather-text);
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  z-index: -1;
+  transition: background-color 0.5s ease;
+}
+
+/* Weather condition classes */
+body.sunny {
+  --weather-primary: #F59E0B;
+  --weather-secondary: #B45309;
+  --weather-accent: #FBBF24;
+  --weather-glass: rgba(42, 25, 13, 0.25);
+  background: linear-gradient(135deg, #b45309, #f59e0b);
+}
+
+body.rainy {
+  --weather-primary: #3B82F6;
+  --weather-secondary: #1E40AF;
+  --weather-accent: #60A5FA;
+  --weather-glass: rgba(15, 23, 42, 0.3);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+body.cloudy {
+  --weather-primary: #64748B;
+  --weather-secondary: #334155;
+  --weather-accent: #94A3B8;
+  --weather-glass: rgba(15, 23, 42, 0.3);
+  background: linear-gradient(135deg, #334155, #64748b);
+}
+
+body.snowy {
+  --weather-primary: #E5E7EB;
+  --weather-secondary: #9CA3AF;
+  --weather-accent: #F3F4F6;
+  --weather-glass: rgba(31, 41, 55, 0.3);
+  background: linear-gradient(135deg, #9ca3af, #e5e7eb);
+}
+
+body.foggy {
+  --weather-primary: #9CA3AF;
+  --weather-secondary: #6B7280;
+  --weather-accent: #D1D5DB;
+  --weather-glass: rgba(31, 41, 55, 0.3);
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
+/* Card styles */
+.card {
+  backdrop-filter: blur(24px);
+  background: var(--weather-glass);
+  border-radius: 24px;
+  border: 1px solid var(--weather-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styles */
+.gradient-btn {
+  background: linear-gradient(135deg, var(--weather-primary), var(--weather-secondary));
+  transition: all 0.5s ease;
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(135deg, var(--weather-secondary), var(--weather-primary));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar styles */
+.navbar {
+  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--weather-border);
+}
+
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--weather-accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes rain {
+  0% {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* Utility classes */
+.weather-icon {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.weather-icon:hover {
+  transform: scale(1.1);
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--weather-primary);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .card {
+    border-radius: 16px;
+    margin: 0.5rem;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  
+  .navbar {
+    padding: 0.5rem;
+  }
+}
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');

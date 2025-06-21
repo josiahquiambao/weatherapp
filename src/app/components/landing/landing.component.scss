@@ -1,0 +1,47 @@
+.landing-wrapper {
+  background: url("/assets/rain-bg.png") no-repeat center center / cover;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;    // vertical centering
+  justify-content: center; // horizontal centering
+  overflow: hidden;
+  padding: 1rem; // optional for smaller screens
+}
+
+.rain-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.glass-card {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  padding: 3rem;
+   max-width: 400px;
+  width: 100%;
+  margin: auto; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.login-btn {
+  background: linear-gradient(to right, #38bdf8, #0ea5e9);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(to right, #0ea5e9, #38bdf8);
+  }
+}
